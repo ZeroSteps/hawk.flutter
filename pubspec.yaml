@@ -27,6 +27,12 @@ dependencies:
   http: ^0.12.2
   shared_preferences: ^0.5.12
 
+  codex_widgets:
+    path: packages/codex_widgets
+
+  codex_core:
+    path: packages/codex_core
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
