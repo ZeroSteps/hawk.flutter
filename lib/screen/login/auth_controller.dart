@@ -34,8 +34,14 @@ class _AuthState extends State<AuthWidget> {
                   padding: EdgeInsets.symmetric(vertical: 0.5),
                   margin: EdgeInsets.symmetric(vertical: 15),
                   color: BaseColors.delimiterColor),
-              LabelTextField(text: "Email address"),
-              LabelTextField(text: "Password"),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 0),
+                child: LabelTextField(text: "Email address"),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: LabelTextField(text: "Password"),
+              ),
               buildFooter()
             ],
           ),
