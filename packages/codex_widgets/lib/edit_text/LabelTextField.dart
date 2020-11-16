@@ -25,7 +25,7 @@ class _LabelTextFieldState extends State<LabelTextField> {
           child: Text(
             widget.text.toUpperCase(),
             style:
-                TextStyle(color: BaseColors.labelTextColor, letterSpacing: 0.15),
+                TextStyle(color: BaseColors.labelTextColor, letterSpacing: 0.15, fontWeight: FontWeight.bold),
           ),
         ),
       ),

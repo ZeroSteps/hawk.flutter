@@ -18,11 +18,11 @@ class _AuthState extends State<AuthWidget> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 280),
+        constraints: BoxConstraints(maxWidth: 300),
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(16)),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
               border: Border.fromBorderSide(
                   BorderSide(color: AuthColors.backgroundBorder)),
               color: AuthColors.background),
@@ -35,11 +35,11 @@ class _AuthState extends State<AuthWidget> {
                   margin: EdgeInsets.symmetric(vertical: 15),
                   color: BaseColors.delimiterColor),
               Padding(
-                padding: const EdgeInsets.only(bottom: 0),
+                padding: const EdgeInsets.only(top: 0),
                 child: LabelTextField(text: "Email address"),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                padding: const EdgeInsets.only(top: 16, bottom: 16),
                 child: LabelTextField(text: "Password"),
               ),
               buildFooter()
@@ -56,13 +56,16 @@ class _AuthState extends State<AuthWidget> {
             color: BaseColors.actionBackground,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(4))),
-            child: Text("Login",
-                style: TextStyle(color: BaseColors.textFieldColor)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text("Enter",
+                  style: TextStyle(color: BaseColors.textFieldColor, fontSize: 14)),
+            ),
             onPressed: () => {}),
         InkWell(
           child: Text(
             "Recovery password",
-            style: TextStyle(color: BaseColors.labelTextColor),
+            style: TextStyle(color: BaseColors.labelTextColor, fontSize: 13),
           ),
         )
       ],
@@ -73,13 +76,20 @@ class _AuthState extends State<AuthWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          "Sign in",
-          style: TextStyle(color: BaseColors.textFieldColor),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+          child: Text(
+            "Fast Auth",
+            style: TextStyle(color: BaseColors.textFieldColor, fontWeight: FontWeight.bold, fontSize: 16),
+          ),
         ),
         InkWell(
-          child: Text("Sign up",
-              style: TextStyle(color: BaseColors.labelTextColor)),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+            child: Text("Sign up",
+                style:
+                    TextStyle(color: BaseColors.labelTextColor, fontSize: 16,fontWeight: FontWeight.bold)),
+          ),
           onTap: () => {},
         )
       ],
