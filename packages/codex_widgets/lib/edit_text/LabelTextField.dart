@@ -20,10 +20,13 @@ class _LabelTextFieldState extends State<LabelTextField> {
     return Column(children: <Widget>[
       Container(
         alignment: Alignment.centerLeft,
-        child: Text(
-          widget.text.toUpperCase(),
-          style:
-              TextStyle(color: BaseColors.labelTextColor, letterSpacing: 0.15),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Text(
+            widget.text.toUpperCase(),
+            style:
+                TextStyle(color: BaseColors.labelTextColor, letterSpacing: 0.15, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
       TextField(
