@@ -1,21 +1,20 @@
 import 'package:codex_core/colors/hawk_auth_colors.dart';
 import 'package:codex_core/colors/hawk_base_colors.dart';
-import 'package:codex_hawk/screen/login/registration.dart';
 import 'package:codex_widgets/edit_text/LabelTextField.dart';
 import 'package:flutter/material.dart';
 
-class AuthController {
+class RegistrationController {
   Widget provideAuth() {
     //TODO()
   }
 }
 
-class AuthWidget extends StatefulWidget {
+class RegistrationWidget extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _AuthState();
+  State<StatefulWidget> createState() => _RegistrationState();
 }
 
-class _AuthState extends State<AuthWidget> {
+class _RegistrationState extends State<RegistrationWidget> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
@@ -36,12 +35,8 @@ class _AuthState extends State<AuthWidget> {
                   margin: EdgeInsets.symmetric(vertical: 15),
                   color: BaseColors.delimiterColor),
               Padding(
-                padding: const EdgeInsets.only(top: 0),
+                padding: const EdgeInsets.only(top: 0, bottom: 16),
                 child: LabelTextField(text: "Email address"),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 16),
-                child: LabelTextField(text: "Password"),
               ),
               buildFooter()
             ],
@@ -59,17 +54,11 @@ class _AuthState extends State<AuthWidget> {
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              child: Text("Enter",
+              child: Text("Registration",
                   style: TextStyle(
                       color: BaseColors.textFieldColor, fontSize: 14)),
             ),
             onPressed: () => {}),
-        InkWell(
-          child: Text(
-            "Recovery password",
-            style: TextStyle(color: BaseColors.labelTextColor, fontSize: 13),
-          ),
-        )
       ],
     );
   }
@@ -81,8 +70,9 @@ class _AuthState extends State<AuthWidget> {
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
           child: Text(
-            "Fast Auth",
-            style: TextStyle(color: BaseColors.textFieldColor,
+            "Sign Up",
+            style: TextStyle(
+                color: BaseColors.textFieldColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 16),
           ),
@@ -90,18 +80,13 @@ class _AuthState extends State<AuthWidget> {
         InkWell(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
-            child: Text("Sign up",
-                style:
-                TextStyle(color: BaseColors.labelTextColor,
+            child: Text("Login",
+                style: TextStyle(
+                    color: BaseColors.labelTextColor,
                     fontSize: 16,
                     fontWeight: FontWeight.bold)),
           ),
-          onTap: () => {
-          Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => RegistrationPage()),
-          )
-        },
+          onTap: () => {Navigator.pop(context)},
         )
       ],
     );

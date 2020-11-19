@@ -19,35 +19,41 @@ class _AuthorizationState extends State<AuthorizationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("images/auth-bg.png"), fit: BoxFit.cover)),
-      child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 72.0),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/auth-bg.png"), fit: BoxFit.cover)),
+          child: SingleChildScrollView(
             child: Column(
-              children: [
-                Text("HAWK",
-                    style: TextStyle(color: AuthColors.textColorWhite, fontSize: 30, fontWeight: FontWeight.bold)),
-                Text("Time for quality",
-                    style: TextStyle(
-                      color: BaseColors.labelTextColor,
-                    )),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 72.0),
+                  child: Column(
+                    children: [
+                      Text("HAWK",
+                          style: TextStyle(
+                              color: AuthColors.textColorWhite,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold)),
+                      Text("Time for quality",
+                          style: TextStyle(
+                            color: BaseColors.labelTextColor,
+                          )),
+                    ],
+                  ),
+                ),
+                Expanded(
+                    child: Container(
+                  child: Center(child: Container(child: AuthWidget())),
+                )),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16.0),
+                  child: Text("Made by CodeX",
+                      style: TextStyle(
+                          color: AuthColors.textColorWhite, fontSize: 12)),
+                )
               ],
             ),
           ),
-          Expanded(
-              child: Container(
-            child: Center(child: Container(child: AuthWidget())),
-          )),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 16.0),
-            child: Text("Made by CodeX",
-                style: TextStyle(color: AuthColors.textColorWhite, fontSize: 12)),
-          )
-        ],
-      ),
-    ));
+        ));
   }
 }
